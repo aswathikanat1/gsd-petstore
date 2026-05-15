@@ -22,13 +22,13 @@
 
 ### Security And API Behavior
 
-- [ ] **SEC-01**: Protected operations require bearer authorization as declared by the OpenAPI security scheme.
-- [ ] **SEC-02**: Validation failures return stable HTTP status codes and response patterns for client handling.
+- [x] **SEC-01**: Protected operations require bearer authorization as declared by the OpenAPI security scheme.
+- [x] **SEC-02**: Validation failures return stable HTTP status codes and response patterns for client handling.
 - [ ] **SEC-03**: Default/unexpected errors are captured and exposed through a consistent error contract.
 
 ### Documentation And Delivery
 
-- [ ] **OPS-01**: Team can generate and publish API reference documentation directly from the OpenAPI file.
+- [x] **OPS-01**: Team can generate and publish API reference documentation directly from the OpenAPI file.
 - [ ] **OPS-02**: Team can run automated contract tests that verify request/response compliance for all v1 operations.
 
 ## v2 Requirements (Deferred)
@@ -70,4 +70,4 @@
 - Documentation and release checklist are complete.
 
 ---
-*Last updated: 2026-05-15 after initialization*
+*Last updated: 2026-05-15 after Phase 1 execution*

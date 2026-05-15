@@ -10,7 +10,7 @@ This roadmap turns the existing OpenAPI contract into a production-ready, verifi
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Foundation And Contract Governance** - Establish tooling, validation, docs pipeline, and auth baseline.
+- [x] **Phase 1: Foundation And Contract Governance** - Establish tooling, validation, docs pipeline, and auth baseline.
 - [ ] **Phase 2: Core Pet Lifecycle API** - Deliver create/update/get/delete behavior for pet resources.
 - [ ] **Phase 3: Discovery And Media Workflows** - Deliver status filtering, form updates, and image upload flows.
 - [ ] **Phase 4: Hardening And Release Readiness** - Complete error-path hardening, contract testing, and release controls.
@@ -28,9 +28,9 @@ This roadmap turns the existing OpenAPI contract into a production-ready, verifi
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Set up project skeleton, linting, and OpenAPI validation pipeline.
-- [ ] 01-02: Implement authentication middleware and baseline request validation behavior.
-- [ ] 01-03: Wire documentation generation and developer usage guide.
+- [x] 01-01: Set up project skeleton, linting, and OpenAPI validation pipeline.
+- [x] 01-02: Implement authentication middleware and baseline request validation behavior.
+- [x] 01-03: Wire documentation generation and developer usage guide.
 
 ### Phase 2: Core Pet Lifecycle API
 **Goal**: Implement and verify core pet CRUD operations that align with contract semantics.
@@ -83,7 +83,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation And Contract Governance | 0/3 | Not started | - |
+| 1. Foundation And Contract Governance | 3/3 | Complete | 2026-05-15 |
 | 2. Core Pet Lifecycle API | 0/3 | Not started | - |
 | 3. Discovery And Media Workflows | 0/3 | Not started | - |
 | 4. Hardening And Release Readiness | 0/2 | Not started | - |
