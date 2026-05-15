@@ -1,7 +1,0 @@
-# Local GSD runtime/tooling installation (not project source)
-.claude/
-
-# OS/editor noise
-.DS_Store
-Thumbs.db
-*.tmp
