@@ -1,6 +1,10 @@
 # Local GSD runtime/tooling installation (not project source)
 .claude/
 
+# Dependencies/build outputs
+node_modules/
+dist/
+
 # OS/editor noise
 .DS_Store
 Thumbs.db
