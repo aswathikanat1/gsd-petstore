@@ -3,8 +3,29 @@ import { type Request as OpenAPIRequest } from "openapi-backend";
 
 import { createContractApi } from "./contract/api";
 import { mountDocs } from "./docs/docsRouter";
-import { formatError } from "./lib/errorFormatter";
+import { formatInternalError } from "./lib/errorFormatter";
 import { type ApiErrorResponse } from "./types/error";
+
+function toSafeErrorDetails(error: unknown): unknown {
+  if (!(error instanceof Error)) {
+    return undefined;
+  }
+
+  return {
+    name: error.name,
+    message: error.message
+  };
+}
+
+export function handleGlobalError(
+  error: unknown,
+  _req: express.Request,
+  res: express.Response,
+  _next: express.NextFunction
+): void {
+  const details = toSafeErrorDetails(error);
+  res.status(500).json(formatInternalError(details));
+}
 
 export function createApp(): Express {
   const app = express();
@@ -29,10 +50,7 @@ export function createApp(): Express {
     }
   });
 
-  app.use((error: unknown, _req: express.Request, res: express.Response) => {
-    const details = error instanceof Error ? { message: error.message } : undefined;
-    res.status(500).json(formatError("INTERNAL_ERROR", "Unexpected error", details));
-  });
+  app.use(handleGlobalError);
 
   return app;
 }

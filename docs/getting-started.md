@@ -35,6 +35,23 @@ npm run openapi:lint
 npm run docs:generate
 ```
 
+## Run Contract Tests
+
+```bash
+npm run test:contract
+```
+
+## Release Verification
+
+Run this sequence before opening or merging a release PR:
+
+```bash
+npm run build
+npm run openapi:lint
+npm run docs:generate
+npm run test:contract
+```
+
 ## View API Docs
 
 Open http://localhost:3000/api-docs in your browser.

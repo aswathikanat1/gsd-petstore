@@ -11,3 +11,7 @@ export function formatError(
 
   return { code, message, details };
 }
+
+export function formatInternalError(details?: unknown): ApiErrorResponse {
+  return formatError("INTERNAL_ERROR", "Unexpected error", details);
+}

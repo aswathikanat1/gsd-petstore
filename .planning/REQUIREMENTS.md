@@ -8,28 +8,28 @@
 - [ ] **PET-02**: User can update an existing pet by ID and receive the updated pet payload.
 - [ ] **PET-03**: User can fetch a pet by ID and receive either the pet payload or a contract-compliant not-found response.
 - [ ] **PET-04**: User can delete a pet by ID and receive a deterministic deletion response.
-- [ ] **PET-05**: User can update pet name and status via form-style request parameters for compatibility with existing integrations.
+- [x] **PET-05**: User can update pet name and status via form-style request parameters for compatibility with existing integrations.
 
 ### Discovery And Filtering
 
-- [ ] **DISC-01**: User can list pets by one or more status values (`available`, `pending`, `sold`) using query parameters.
-- [ ] **DISC-02**: User receives clear validation feedback when an invalid status filter is provided.
+- [x] **DISC-01**: User can list pets by one or more status values (`available`, `pending`, `sold`) using query parameters.
+- [x] **DISC-02**: User receives clear validation feedback when an invalid status filter is provided.
 
 ### Media Upload
 
-- [ ] **MEDIA-01**: User can upload a binary image for an existing pet and receive a structured API response.
-- [ ] **MEDIA-02**: User receives explicit error responses when no file is uploaded or pet ID does not exist.
+- [x] **MEDIA-01**: User can upload a binary image for an existing pet and receive a structured API response.
+- [x] **MEDIA-02**: User receives explicit error responses when no file is uploaded or pet ID does not exist.
 
 ### Security And API Behavior
 
 - [x] **SEC-01**: Protected operations require bearer authorization as declared by the OpenAPI security scheme.
 - [x] **SEC-02**: Validation failures return stable HTTP status codes and response patterns for client handling.
-- [ ] **SEC-03**: Default/unexpected errors are captured and exposed through a consistent error contract.
+- [x] **SEC-03**: Default/unexpected errors are captured and exposed through a consistent error contract.
 
 ### Documentation And Delivery
 
 - [x] **OPS-01**: Team can generate and publish API reference documentation directly from the OpenAPI file.
-- [ ] **OPS-02**: Team can run automated contract tests that verify request/response compliance for all v1 operations.
+- [x] **OPS-02**: Team can run automated contract tests that verify request/response compliance for all v1 operations.
 
 ## v2 Requirements (Deferred)
 
@@ -70,4 +70,4 @@
 - Documentation and release checklist are complete.
 
 ---
-*Last updated: 2026-05-15 after Phase 1 execution*
+*Last updated: 2026-05-15 after Phase 4 execution*

@@ -11,9 +11,9 @@ This roadmap turns the existing OpenAPI contract into a production-ready, verifi
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
 - [x] **Phase 1: Foundation And Contract Governance** - Establish tooling, validation, docs pipeline, and auth baseline.
-- [ ] **Phase 2: Core Pet Lifecycle API** - Deliver create/update/get/delete behavior for pet resources.
-- [ ] **Phase 3: Discovery And Media Workflows** - Deliver status filtering, form updates, and image upload flows.
-- [ ] **Phase 4: Hardening And Release Readiness** - Complete error-path hardening, contract testing, and release controls.
+- [x] **Phase 2: Core Pet Lifecycle API** - Deliver create/update/get/delete behavior for pet resources.
+- [x] **Phase 3: Discovery And Media Workflows** - Deliver status filtering, form updates, and image upload flows.
+- [x] **Phase 4: Hardening And Release Readiness** - Complete error-path hardening, contract testing, and release controls.
 
 ## Phase Details
 
@@ -43,9 +43,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Implement persistence model and handlers for create/get operations.
-- [ ] 02-02: Implement update/delete handlers with contract-compliant responses.
-- [ ] 02-03: Add endpoint-level tests for happy and failure CRUD scenarios.
+- [x] 02-01: Implement persistence model and handlers for create/get operations.
+- [x] 02-02: Implement update/delete handlers with contract-compliant responses.
+- [x] 02-03: Add endpoint-level tests for happy and failure CRUD scenarios.
 
 ### Phase 3: Discovery And Media Workflows
 **Goal**: Deliver filtering, form updates, and image upload behaviors for practical API usage.
@@ -58,9 +58,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: Implement status filtering endpoint with enum validation and tests.
-- [ ] 03-02: Implement form-style update endpoint and backward compatibility checks.
-- [ ] 03-03: Implement upload endpoint with binary handling and error coverage.
+- [x] 03-01: Implement status filtering endpoint with enum validation and tests.
+- [x] 03-02: Implement form-style update endpoint and backward compatibility checks.
+- [x] 03-03: Implement upload endpoint with binary handling and error coverage.
 
 ### Phase 4: Hardening And Release Readiness
 **Goal**: Ensure reliability under failure conditions and establish repeatable release gates.
@@ -73,8 +73,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: Implement global error handling and standardized default responses.
-- [ ] 04-02: Finalize contract test suite and release verification workflow.
+- [x] 04-01: Implement global error handling and standardized default responses.
+- [x] 04-02: Finalize contract test suite and release verification workflow.
 
 ## Progress
 
@@ -84,9 +84,9 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation And Contract Governance | 3/3 | Complete | 2026-05-15 |
-| 2. Core Pet Lifecycle API | 0/3 | Not started | - |
-| 3. Discovery And Media Workflows | 0/3 | Not started | - |
-| 4. Hardening And Release Readiness | 0/2 | Not started | - |
+| 2. Core Pet Lifecycle API | 3/3 | Complete | 2026-05-15 |
+| 3. Discovery And Media Workflows | 3/3 | Complete | 2026-05-15 |
+| 4. Hardening And Release Readiness | 2/2 | Complete | 2026-05-15 |
 
 ---
-*Last updated: 2026-05-15 after initialization*
+*Last updated: 2026-05-15 after Phase 4 execution*

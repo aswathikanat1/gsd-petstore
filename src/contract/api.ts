@@ -1,22 +1,17 @@
 import { type Request, type Response } from "express";
-import { OpenAPIBackend, type Context } from "openapi-backend";
+import { OpenAPIBackend } from "openapi-backend";
 
+import { handleAddPet } from "../handlers/addPet";
+import { handleDeletePet } from "../handlers/deletePet";
+import { handleFindPetsByStatus } from "../handlers/findPetsByStatus";
+import { handleGetPetById } from "../handlers/getPetById";
 import { handleMethodNotAllowed } from "../handlers/methodNotAllowed";
 import { handleNotFound } from "../handlers/notFound";
+import { handleUpdatePetWithForm } from "../handlers/updatePetWithForm";
+import { handleUpdatePet } from "../handlers/updatePet";
+import { handleUploadFile } from "../handlers/uploadFile";
 import { formatError } from "../lib/errorFormatter";
-import { applyOperationSecurity, registerSecurityHandlers } from "./security";
-
-function createNotImplementedHandler(operationId: string) {
-  return (_context: Context, req: Request, res: Response): void => {
-    applyOperationSecurity(operationId, req, res, () => undefined, () => {
-      res.status(501).json(
-        formatError("NOT_IMPLEMENTED", "Operation not implemented yet", {
-          operationId
-        })
-      );
-    });
-  };
-}
+import { registerSecurityHandlers } from "./security";
 
 export function createContractApi(): OpenAPIBackend {
   const api = new OpenAPIBackend({ definition: "./petstore.yaml" });
@@ -45,13 +40,13 @@ export function createContractApi(): OpenAPIBackend {
         .status(401)
         .json(formatError("UNAUTHORIZED", "Bearer token required", { operationId }));
     },
-    addPet: createNotImplementedHandler("addPet"),
-    updatePet: createNotImplementedHandler("updatePet"),
-    findPetsByStatus: createNotImplementedHandler("findPetsByStatus"),
-    getPetById: createNotImplementedHandler("getPetById"),
-    updatePetWithForm: createNotImplementedHandler("updatePetWithForm"),
-    deletePet: createNotImplementedHandler("deletePet"),
-    uploadFile: createNotImplementedHandler("uploadFile")
+    addPet: handleAddPet,
+    updatePet: handleUpdatePet,
+    findPetsByStatus: handleFindPetsByStatus,
+    getPetById: handleGetPetById,
+    updatePetWithForm: handleUpdatePetWithForm,
+    deletePet: handleDeletePet,
+    uploadFile: handleUploadFile
   });
 
   registerSecurityHandlers(api);

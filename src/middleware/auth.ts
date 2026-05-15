@@ -23,7 +23,13 @@ export function requireBearerAuth(
     typeof req.headers["x-operation-id"] === "string"
       ? req.headers["x-operation-id"]
       : "unknown";
-  const header = req.header("authorization");
+  const headerFromHeaders =
+    typeof req.headers.authorization === "string"
+      ? req.headers.authorization
+      : undefined;
+  const headerFromMethod =
+    typeof req.header === "function" ? req.header("authorization") : undefined;
+  const header = headerFromHeaders ?? headerFromMethod;
   const valid = hasValidBearerHeader(header);
 
   if (valid) {
