@@ -67,3 +67,9 @@
 3. Open:
 - http://localhost:3000
 - http://localhost:3000/api-docs
+
+**Postman Collection**
+- Import [postman/gsd-petstore-local.postman_collection.json](postman/gsd-petstore-local.postman_collection.json) into Postman.
+- Set `baseUrl` to `http://localhost:3000`.
+- For protected endpoints, use Bearer token auth with any non-empty token value (for example: `demo-token`).
+- Create Pet automatically stores the returned `petId` collection variable for follow-up requests.

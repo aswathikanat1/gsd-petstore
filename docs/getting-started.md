@@ -52,6 +52,13 @@ npm run docs:generate
 npm run test:contract
 ```
 
+## Postman Collection
+
+- Import [postman/gsd-petstore-local.postman_collection.json](../postman/gsd-petstore-local.postman_collection.json) into Postman.
+- Set `baseUrl` to `http://localhost:3000`.
+- For protected endpoints, use Bearer token auth with any non-empty token value (for example: `demo-token`).
+- The Create Pet request stores `petId` automatically for follow-up requests.
+
 ## View API Docs
 
 Open http://localhost:3000/api-docs in your browser.
