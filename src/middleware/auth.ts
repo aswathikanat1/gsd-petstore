@@ -2,6 +2,16 @@ import { type NextFunction, type Request, type Response } from "express";
 
 import { formatError } from "../lib/errorFormatter";
 
+type AuthState = {
+  authorized: boolean;
+  reason?: "missing_or_invalid" | "present";
+  mode: "strict" | "permissive";
+};
+
+type AuthenticatedRequest = Request & {
+  auth?: AuthState;
+};
+
 export function isAuthStrict(): boolean {
   return process.env.AUTH_STRICT !== "false";
 }
@@ -19,6 +29,7 @@ export function requireBearerAuth(
   res: Response,
   next: NextFunction
 ): void {
+  const authReq = req as AuthenticatedRequest;
   const operationId =
     typeof req.headers["x-operation-id"] === "string"
       ? req.headers["x-operation-id"]
@@ -33,7 +44,7 @@ export function requireBearerAuth(
   const valid = hasValidBearerHeader(header);
 
   if (valid) {
-    req.auth = {
+    authReq.auth = {
       authorized: true,
       reason: "present",
       mode: isAuthStrict() ? "strict" : "permissive"
@@ -43,7 +54,7 @@ export function requireBearerAuth(
   }
 
   if (!isAuthStrict()) {
-    req.auth = {
+    authReq.auth = {
       authorized: false,
       reason: "missing_or_invalid",
       mode: "permissive"
@@ -53,7 +64,7 @@ export function requireBearerAuth(
     return;
   }
 
-  req.auth = {
+  authReq.auth = {
     authorized: false,
     reason: "missing_or_invalid",
     mode: "strict"
