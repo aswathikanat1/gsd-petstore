@@ -51,7 +51,7 @@ None yet.
 
 ### Blockers/Concerns
 
-- Functional HTTP smoke checks were attempted but subagent output truncation prevented capture of full status/body evidence.
+- Functional HTTP smoke checks completed on 2026-05-15; strict/permissive auth behavior captured in 01-03 summary.
 
 ## Deferred Items
 

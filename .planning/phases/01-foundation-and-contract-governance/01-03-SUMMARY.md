@@ -35,6 +35,23 @@ Implemented runtime Redoc route, deterministic docs generation command, CI docs 
 - npm run docs:generate: pass.
 - npm run openapi:lint: pass.
 
+## Post-Execution Smoke Check (2026-05-15)
+
+Strict mode (AUTH_STRICT=true or unset):
+
+- GET /health -> 200
+- GET /api-docs -> 200
+- POST /pet without bearer token -> 401
+- POST /pet with bearer token -> 501
+- GET /pet/123 without bearer token -> 401
+
+Permissive mode (AUTH_STRICT=false):
+
+- POST /pet without bearer token -> 501
+- GET /pet/123 without bearer token -> 501
+
+Conclusion: Runtime behavior matches Phase 1 auth baseline expectations. Strict mode enforces bearer auth, and permissive mode allows bootstrap access while retaining not-implemented operation responses.
+
 ## Deviations from Plan
 
 None - plan executed as specified.
