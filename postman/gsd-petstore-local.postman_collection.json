@@ -1,23 +1,12 @@
 {
   "info": {
+    "_postman_id": "12da1f45-412e-4117-95d9-6625904ad3fa",
     "name": "GSD Petstore Local API",
     "description": "Postman collection for local testing of the GSD Petstore API.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50185724",
+    "_collection_link": "https://go.postman.co/collection/50185724-12da1f45-412e-4117-95d9-6625904ad3fa?source=collection_link"
   },
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:3000"
-    },
-    {
-      "key": "bearerToken",
-      "value": "demo-token"
-    },
-    {
-      "key": "petId",
-      "value": "1"
-    }
-  ],
   "item": [
     {
       "name": "Health",
@@ -132,8 +121,18 @@
       "response": []
     },
     {
-      "name": "Get Pet By ID",
+      "name": "Get Pet By ID (Protected)",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [],
         "url": {
@@ -186,8 +185,18 @@
       "response": []
     },
     {
-      "name": "Form Update Pet",
+      "name": "Form Update Pet (Protected)",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [],
         "url": {
@@ -284,6 +293,20 @@
         }
       },
       "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "bearerToken",
+      "value": "demo-token"
+    },
+    {
+      "key": "petId",
+      "value": "1"
     }
   ]
 }
